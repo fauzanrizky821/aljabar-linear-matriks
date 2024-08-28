@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void penjumlahan(int i, int j, int matriks1[][7], int matriks2[][7], int hasilMatriks[][7])
+void penjumlahan(int i, int j, int matriks1[i][j], int matriks2[i][j], int hasilMatriks[i][j])
 {
     if ((i != i) && (j != j))
     {
