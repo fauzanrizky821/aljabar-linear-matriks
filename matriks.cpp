@@ -17,3 +17,20 @@ void penjumlahan(int i, int j, int matriks1[][100], int matriks2[][100], int has
         }
     }
 }
+
+void trace(int m, int n, int matriks[][100]){
+
+    int trace;
+    if(m != n){
+            cout << "Trace pada matriks tidak dapat dihitung, bukan matriks persegi!!\n";
+        } else{
+            for(int i = 0; i < m; i++){
+                for(int j = 0; j < n; j++){
+                    if(i == j){
+                        trace = trace + matriks[i][j];
+                    }
+                }
+            }
+        }
+        cout << "Trace dari matriks tersebut adalah : " << trace;
+}
