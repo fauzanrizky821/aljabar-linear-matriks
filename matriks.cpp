@@ -34,3 +34,23 @@ void trace(int m, int n, int matriks[][100]){
         }
         cout << "Trace dari matriks tersebut adalah : " << trace;
 }
+
+void perkalianSkalar(int skalar, int matriks[][100]){
+    // perkalian matriks dengan skalar
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 2; j++)
+        {
+            matriks[i][j] = matriks[i][j] * skalar;
+        }
+    }
+
+    cout << "\nhasil perkalian matriks dengan skalar : " << endl;
+    for (int i = 0; i < 2; i++)
+    {
+        for (int j = 0; j < 2; j++)
+        {
+            cout << matriks[i][j];
+        }
+    }
+}
