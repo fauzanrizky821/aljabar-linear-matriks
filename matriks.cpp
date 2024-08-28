@@ -17,7 +17,8 @@ void penjumlahan(int i, int j, int matriks1[][100], int matriks2[][100], int has
     }
 }
 
-void transposeMatriks(int i, int j, int matriks[100][100]){
+void transposeMatriks(int i, int j, int matriks[100][100])
+{
     int transpose[100][100];
     for (int p = 0; p < i; p++)
     {
@@ -55,24 +56,32 @@ void matriksNol(int i, int j)
         cout << endl;
     }
 }
-void trace(int m, int n, int matriks[][100]){
+void trace(int m, int n, int matriks[][100])
+{
 
     int trace;
-    if(m != n){
-            cout << "Trace pada matriks tidak dapat dihitung, bukan matriks persegi!!\n";
-        } else{
-            for(int i = 0; i < m; i++){
-                for(int j = 0; j < n; j++){
-                    if(i == j){
-                        trace = trace + matriks[i][j];
-                    }
+    if (m != n)
+    {
+        cout << "Trace pada matriks tidak dapat dihitung, bukan matriks persegi!!\n";
+    }
+    else
+    {
+        for (int i = 0; i < m; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if (i == j)
+                {
+                    trace = trace + matriks[i][j];
                 }
             }
         }
-        cout << "Trace dari matriks tersebut adalah : " << trace;
+    }
+    cout << "Trace dari matriks tersebut adalah : " << trace;
 }
 
-void perkalianSkalar(int skalar, int matriks[][100]){
+void perkalianSkalar(int skalar, int matriks[][100])
+{
     // perkalian matriks dengan skalar
     for (int i = 0; i < 2; i++)
     {
