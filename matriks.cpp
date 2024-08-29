@@ -1,5 +1,6 @@
 #include "matriks.h"
-void penjumlahan(int i, int j, int matriks1[][100], int matriks2[][100], int hasilMatriks[][100])
+
+void penjumlahanMatriks(int i, int j, int matriks1[][100], int matriks2[][100], int hasilMatriks[][100])
 {
     if ((i != i) && (j != j))
     {
@@ -12,6 +13,24 @@ void penjumlahan(int i, int j, int matriks1[][100], int matriks2[][100], int has
             for (int b = 0; b < 2; b++)
             {
                 hasilMatriks[a][b] = matriks1[a][b] + matriks2[a][b];
+            }
+        }
+    }
+}
+
+void penguranganMatriks(int i, int j, int matriks1[][100], int matriks2[][100], int hasilMatriks[][100])
+{
+    if ((i != i) && (j != j))
+    {
+        cout << "Jumlah elemen pada matriks tidak sama. Matriks tidak dapat dijumlahkan!!" << endl;
+    }
+    else
+    {
+        for (int a = 0; a < 2; a++)
+        {
+            for (int b = 0; b < 2; b++)
+            {
+                hasilMatriks[a][b] = matriks1[a][b] - matriks2[a][b];
             }
         }
     }
@@ -102,18 +121,26 @@ void perkalianSkalar(int skalar, int matriks[][100])
     }
 }
 
-void buatMatriksIdentitas(int m, int n, int matriks[][100]){
-    if (m != n){
+void buatMatriksIdentitas(int m, int n, int matriks[][100])
+{
+    if (m != n)
+    {
         cout << "Matriks identitas tidak bisa dibuat. Bukan matriks persegi!!\n";
-    } else{
-        for (int i = 0; i < n; i++){
-            for (int j = 0; j < n; j++){
-                if (i != j){
+    }
+    else
+    {
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if (i != j)
+                {
                     matriks[i][j] = 0;
-                } else {
+                }
+                else
+                {
                     matriks[i][j] = 1;
                 }
-                
             }
         }
     }
