@@ -43,7 +43,10 @@ void transposeMatriks(int i, int j, int matriks[100][100])
     {
         for (int q = 0; q < j; q++)
         {
-            transpose[q][p] = matriks[p][q];
+            int temp;
+            temp = matriks[p][q];
+            matriks[p][q] = transpose[q][p];
+            transpose[q][p] = temp;
         }
     }
     for (int p = 0; p < j; p++)
