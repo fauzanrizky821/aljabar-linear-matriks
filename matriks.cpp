@@ -56,6 +56,7 @@ void matriksNol(int i, int j)
         cout << endl;
     }
 }
+
 void trace(int m, int n, int matriks[][100])
 {
 
@@ -97,6 +98,23 @@ void perkalianSkalar(int skalar, int matriks[][100])
         for (int j = 0; j < 2; j++)
         {
             cout << matriks[i][j];
+        }
+    }
+}
+
+void buatMatriksIdentitas(int m, int n, int matriks[][100]){
+    if (m != n){
+        cout << "Matriks identitas tidak bisa dibuat. Bukan matriks persegi!!\n";
+    } else{
+        for (int i = 0; i < n; i++){
+            for (int j = 0; j < n; j++){
+                if (i != j){
+                    matriks[i][j] = 0;
+                } else {
+                    matriks[i][j] = 1;
+                }
+                
+            }
         }
     }
 }
