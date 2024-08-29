@@ -67,12 +67,6 @@ void matriksNol(int i, int j)
         for (int q = 0; q < j; q++)
         {
             matriks[p][q] = 0;
-        }
-    }
-    for (int p = 0; p < i; p++)
-    {
-        for (int q = 0; q < j; q++)
-        {
             cout << matriks[p][q];
         }
         cout << endl;
