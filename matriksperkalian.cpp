@@ -1,16 +1,16 @@
 #include<iostream>
 using namespace std;
 
-int perkalianMatriks(int kolomA, int barisA, int kolomB, int barisB, int matriksA[100][100], int matriksB[100][100], int matriksC[100][100]){
+int menampilkanMatriks(const char* nama_matriks, int kolom, int baris, int matriks[100][100]);
+
+bool perkalianMatriks(int kolomA, int barisA, int kolomB, int barisB, int matriksA[100][100], int matriksB[100][100], int matriksC[100][100]){
     //perkalian matriks
     if (kolomA != barisB){
         cout << " !! Maaf, kolom A dan baris B jumlahnya harus sama !! " <<endl;
+        return 0;
     }
     else{
-
         int temp;
-        
-        
 
         for(int x=1; x<=kolomB; x++){
             for(int i=1; i<=barisA; i++){  
@@ -18,7 +18,6 @@ int perkalianMatriks(int kolomA, int barisA, int kolomB, int barisB, int matriks
                 int j=1;
                 temp = 0;
                 for(int b=1; b<=kolomA; b++){
-                    // cout << endl<<matriksA[i][j] << "*" << matriksB[y][x] << " + ";
                     temp = temp + (matriksA[i][j] * matriksB[y][x]);
                     y++;
                     j++;
@@ -26,11 +25,11 @@ int perkalianMatriks(int kolomA, int barisA, int kolomB, int barisB, int matriks
                 matriksC[i][x] = temp;
             }
         }
+        return 1;
     }
-    return 0;
 }
 
-int main(){
+int gatePerkalian(){
     int kolomA, barisA, kolomB, barisB;
 
     cout << static_cast<char>(201);
@@ -81,51 +80,8 @@ int main(){
     }
     //end asign
 
-    // TANPILAN 
-    cout << "\n Tampilan Matriks A : " << endl;
-    cout << static_cast<char>(218) << static_cast<char>(196) ;
-    for(int i=1; i<=kolomA; i++){
-        cout << "   ";
-    }
-    cout << static_cast<char>(196) << static_cast<char>(191) <<endl;
-
-    for(int i=1; i<=barisA; i++){
-        cout << static_cast<char>(179) << " ";
-        for(int j=1; j<=kolomA; j++){
-            cout << " " << matriksA[i][j] << " " ;
-        }
-        cout << " " << static_cast<char>(179) <<endl;
-    }
-
-    cout << static_cast<char>(192) << static_cast<char>(196) ;
-    for(int i=1; i<=kolomA; i++){
-        cout << "   ";
-    }
-    cout << static_cast<char>(196) << static_cast<char>(217) <<endl ;
-    //end tampilan
-
-    //tampilan
-    cout << "\n Tampilan Matriks B  " << endl;
-    cout << static_cast<char>(218) << static_cast<char>(196) ;
-    for(int i=1; i<=kolomB; i++){
-        cout << "   ";
-    }
-    cout << static_cast<char>(196) << static_cast<char>(191) <<endl;
-
-    for(int i=1; i<=barisB; i++){
-        cout << static_cast<char>(179) << " ";
-        for(int j=1; j<=kolomB; j++){
-            cout << " " << matriksB[i][j] << " " ;
-        }
-        cout << " " << static_cast<char>(179) <<endl;
-    }
-
-    cout << static_cast<char>(192) << static_cast<char>(196) ;
-    for(int i=1; i<=kolomB; i++){
-        cout << "   ";
-    }
-    cout << static_cast<char>(196) << static_cast<char>(217) <<endl ;
-    //end tampilan
+    menampilkanMatriks("Tampilan Matriks A :", kolomA, barisA, matriksA);
+    menampilkanMatriks("Tampilan Matriks B :", kolomB, barisB, matriksB);
 
     cout << "=====================================" << endl;
 
@@ -133,28 +89,36 @@ int main(){
     int kolomC = kolomB;
     int matriksC[100][100];
 
-    perkalianMatriks(kolomA,barisA, kolomB, barisB, matriksA, matriksB, matriksC);
+    if(perkalianMatriks(kolomA,barisA, kolomB, barisB, matriksA, matriksB, matriksC)){
+        menampilkanMatriks("Hasil A x B : ", kolomC, barisC, matriksC);
+    }
+}
 
-    cout << " Hasil A x B :  " << endl;
+int menampilkanMatriks(const char* nama_matriks, int kolom, int baris, int matriks[100][100]){
+    cout << nama_matriks << endl;
     cout << static_cast<char>(218) << static_cast<char>(196) ;
-    for(int i=1; i<=kolomC; i++){
-        cout << "    ";
+    for(int i=0; i<=kolom; i++){
+        cout << "\t";
     }
     cout << static_cast<char>(196) << static_cast<char>(191) <<endl;
 
-    for(int i=1; i<=barisC; i++){
-        cout << static_cast<char>(179) << " ";
-        for(int j=1; j<=kolomC; j++){
-            cout << " " << matriksC[i][j] << " ";
+    for(int i=1; i<=baris; i++){
+        cout << static_cast<char>(179);
+        for(int j=1; j<=kolom; j++){
+            cout << "\t" << matriks[i][j];
         }
-        cout << " " << static_cast<char>(179) <<endl;
+        cout << "\t " << static_cast<char>(179) <<endl;
     }
 
     cout << static_cast<char>(192) << static_cast<char>(196) ;
-    for(int i=1; i<=kolomC; i++){
-        cout << "    ";
+    for(int i=0; i<=kolom; i++){
+        cout << "\t";
     }
     cout << static_cast<char>(196) << static_cast<char>(217) <<endl ;
-        //end tampilan
+    return 0;
+}
+
+int main(){
+    gatePerkalian();
     return 0;
 }
