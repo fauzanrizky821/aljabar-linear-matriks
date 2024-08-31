@@ -26,6 +26,11 @@ int main()
         cout << static_cast<char>(186) << "   1. Operasi Penjumlahan               " << static_cast<char>(186) << endl;
         cout << static_cast<char>(186) << "   2. Operasi Pengurangan               " << static_cast<char>(186) << endl;
         cout << static_cast<char>(186) << "   3. Operasi Perkalian                 " << static_cast<char>(186) << endl;
+        cout << static_cast<char>(186) << "   3. Tranpose                          " << static_cast<char>(186) << endl;
+        cout << static_cast<char>(186) << "   4. Trace                             " << static_cast<char>(186) << endl;
+        cout << static_cast<char>(186) << "   5. Matriks Nol                       " << static_cast<char>(186) << endl;
+        cout << static_cast<char>(186) << "   6. Matriks Identitas                 " << static_cast<char>(186) << endl;
+        cout << static_cast<char>(186) << "   7. Invers                            " << static_cast<char>(186) << endl;
         cout << static_cast<char>(186) << "   0. Keluar                            " << static_cast<char>(186) << endl;
         cout << static_cast<char>(200);
         for (int i = 1; i <= 40; i++)
@@ -40,24 +45,89 @@ int main()
         {
         case 1:
             insertDuaMatriks(barisA, kolomA, barisB, kolomB, matriksA, matriksB);
-            menampilkanMatriks("MatriksA", kolomA, barisA, matriksA);
-            menampilkanMatriks("MatriksB", kolomB, barisB, matriksB);
-            penjumlahanMatriks(barisA, kolomA, barisB, kolomB, matriksA, matriksB, hasilMatriks);
-            menampilkanMatriks("Hasil Penjumlahan", kolomA, barisA, hasilMatriks);
+            if (penjumlahanMatriks(barisA, kolomA, barisB, kolomB, matriksA, matriksB, hasilMatriks))
+            {
+                menampilkanMatriks("Hasil Penjumlahan", kolomA, barisA, hasilMatriks);
+            }
             cout << " Tekan Enter untuk Kembali ";
             cin.ignore();
             cin.get();
             break;
         case 2:
+            insertDuaMatriks(barisA, kolomA, barisB, kolomB, matriksA, matriksB);
+            if(penjumlahanMatriks(barisA, kolomA, barisB, kolomB, matriksA, matriksB, hasilMatriks))
+            {
+                menampilkanMatriks("Hasil Pengurangan", kolomA, barisA, hasilMatriks);
+            }
+            cout << " Tekan Enter untuk Kembali ";
+            cin.ignore();
+            cin.get();
             break;
         case 3:
-            system("cls");
-            gatePerkalian();
+            do {
+                system("clas");
+                // Tampilan
+                cout << static_cast<char>(201);
+                for (int i = 1; i <= 40; i++)
+                    cout << static_cast<char>(205);
+                cout << static_cast<char>(187) << endl;
+                cout << static_cast<char>(186) << "            METODE PERKALIAN            " << static_cast<char>(186) << endl;
+                cout << static_cast<char>(200);
+                for (int i = 1; i <= 40; i++)
+                    cout << static_cast<char>(205);
+                cout << static_cast<char>(188) << endl;
+
+                cout << static_cast<char>(186) << "   1. Perkalian biasa                   " << static_cast<char>(186) << endl;
+                cout << static_cast<char>(186) << "   2. Perkalian dengan skalar           " << static_cast<char>(186) << endl;
+                cout << static_cast<char>(186) << "   3. Perkalian dengan kombinasi linear " << static_cast<char>(186) << endl;
+                cout << static_cast<char>(186) << "   0. Keluar                            " << static_cast<char>(186) << endl;
+                cout << static_cast<char>(200);
+                for (int i = 1; i <= 40; i++)
+                    cout << static_cast<char>(205);
+                cout << static_cast<char>(188) << endl;
+                //End Tampilan
+                cout << " Pilih Metode = ";
+                cin >> pilih_menu;
+                
+                switch (pilih_menu)
+                {
+                case 1:
+                    system("cls");
+                    gatePerkalian();
+                    break;
+                case 2:
+                    /* code */
+                    break;
+                case 3:
+                    insertDuaMatriks(barisA, kolomA, barisB, kolomB, matriksA, matriksB);
+                    if (perkalianLinear(barisA, kolomA, barisB, kolomB, matriksA, matriksB, hasilMatriks))
+                    {
+                        menampilkanMatriks("Hasil Perkalian Kombinasi Linear", kolomA, barisA, hasilMatriks);   
+                    }
+                    cout << " Tekan Enter untuk Kembali ";
+                    cin.ignore();
+                    cin.get();
+                    break;
+
+                default:
+                    break;
+                }
+                } while (pilih_menu != 0);
+            pilih_menu = 99;
             break;
         case 4:
             break;
         case 5:
             break;
+        case 6:
+            break;
+        case 7:
+            inversMatriks();
+            cout << " Tekan Enter untuk Kembali ";
+            cin.ignore();
+            cin.get();
+            break;
+        
 
         default:
             break;
