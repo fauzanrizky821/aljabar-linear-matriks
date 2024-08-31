@@ -5,6 +5,8 @@ using namespace std;
 
 int main()
 {
+    int barisA, kolomA, barisB, kolomB;
+    int matriksA[100][100], matriksB[100][100];
     int pilih_menu;
     do
     {
@@ -35,9 +37,19 @@ int main()
 
         switch (pilih_menu)
         {
+        case 1:
+            insertDuaMatriks(barisA, kolomA, barisB, kolomB, matriksA, matriksB);
+            
+            break;
+        case 2:
+            break;
         case 3:
             system("cls");
             gatePerkalian();
+            break;
+        case 4:
+            break;
+        case 5:
             break;
 
         default:

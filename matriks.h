@@ -28,5 +28,6 @@ void buatMatriksIdentitas(int m, int n, int matriks[][100]);
 bool perkalianMatriks(int kolomA, int barisA, int kolomB, int barisB, int matriksA[100][100], int matriksB[100][100], int matriksC[100][100]);
 int gatePerkalian();
 int menampilkanMatriks(const char* nama_matriks, int kolom, int baris, int matriks[100][100]);
-int insertMatriks(int barisA, int kolomA, int barisB, int kolomB, int matriksA[100][100], int matriksB[100][100]);
+int insertDuaMatriks(int &barisA, int &kolomA, int &barisB, int &kolomB, int matriksA[100][100], int matriksB[100][100]);
+int insertSatuMatriks(int &barisA, int &kolomA, int matriksA[100][100]);
 #endif
