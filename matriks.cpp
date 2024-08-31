@@ -57,7 +57,32 @@ void perkalianLinear(int i1, int j1, int i2, int j2, int matriks1[][100], int ma
     }
 }
 
+void inversMatriks(int i, int j, int matriks[][100], int hasilMatriks[][100]){
+    if (i != 2 && j != 2){
+        cout << "Hanya bisa melakukan invers 2x2" << endl;
+    } else {
+        int det = 1 / (matriks[0][0] * matriks[1][1] - matriks[0][1] * matriks[1][0]);
 
+        if (det == 0){
+            cout << "Tidak bisa melakukan invers karena determinan bernilai nol" << endl;
+        } else {
+            hasilMatriks[0][0] = matriks[1][1];
+            hasilMatriks[0][1] = -1 * matriks[0][1];
+            hasilMatriks[1][0] = -1 * matriks[1][0];
+            hasilMatriks[1][1] = matriks[0][0];
+
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    hasilMatriks[i][j] = hasilMatriks[i][j] * det;
+                }
+                
+            }
+            
+        }
+    }
+}
 
 void transposeMatriks(int i, int j, int matriks[100][100])
 {

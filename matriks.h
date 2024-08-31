@@ -10,6 +10,7 @@ using namespace std;
 void penjumlahanMatriks(int i1, int j1, int i2, int j2, int matriks1[][100], int matriks2[][100], int hasilMatriks[][100]);
 void penguranganMatriks(int i1, int j1, int i2, int j2,int matriks1[][100], int matriks2[][100], int hasilMatriks[][100]);
 void perkalianLinear(int i1, int j1, int i2, int j2, int matriks1[][100], int matriks2[][100], int hasilMatriks[][100]);
+void inversMatriks(int i, int j, int matriks[][100], int hasilMatriks[][100]);
 void transposeMatriks(int i, int j, int matriks[100][100]);
 void matriksNol(int i, int j);
 void trace(int m, int n, int matriks[][100]);
