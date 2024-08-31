@@ -1,3 +1,4 @@
+#include "matriks.h"
 
 void penjumlahanMatriks(int i1, int j1, int i2, int j2, int matriks1[][100], int matriks2[][100], int hasilMatriks[][100])
 {
@@ -17,7 +18,7 @@ void penjumlahanMatriks(int i1, int j1, int i2, int j2, int matriks1[][100], int
     }
 }
 
-void penguranganMatriks(int i1, int j1, int i2, int j2,int matriks1[][100], int matriks2[][100], int hasilMatriks[][100])
+void penguranganMatriks(int i1, int j1, int i2, int j2, int matriks1[][100], int matriks2[][100], int hasilMatriks[][100])
 {
     if ((i1 != i2) && (j1 != j2))
     {
@@ -30,6 +31,59 @@ void penguranganMatriks(int i1, int j1, int i2, int j2,int matriks1[][100], int 
             for (int b = 0; b < 2; b++)
             {
                 hasilMatriks[a][b] = matriks1[a][b] - matriks2[a][b];
+            }
+        }
+    }
+}
+
+void perkalianLinear(int i1, int j1, int i2, int j2, int matriks1[][100], int matriks2[][100], int hasilMatriks[][100])
+{
+    int hasil = 1;
+    int ih = i1;
+    int jh = j2;
+
+    int m = 0;
+    for (int n; n < j2; n++)
+    {
+        m = 0;
+        for (int j = 0; j < j1; j++)
+        {
+            for (int i = 0; i < i1; i++)
+            {
+                hasilMatriks[i][n] = hasilMatriks[i][n] + matriks1[i][j] * matriks2[m][n];
+            }
+            m++;
+        }
+    }
+}
+
+void inversMatriks(int i, int j, int matriks[][100], int hasilMatriks[][100])
+{
+    if (i != 2 && j != 2)
+    {
+        cout << "Hanya bisa melakukan invers 2x2" << endl;
+    }
+    else
+    {
+        int det = 1 / (matriks[0][0] * matriks[1][1] - matriks[0][1] * matriks[1][0]);
+
+        if (det == 0)
+        {
+            cout << "Tidak bisa melakukan invers karena determinan bernilai nol" << endl;
+        }
+        else
+        {
+            hasilMatriks[0][0] = matriks[1][1];
+            hasilMatriks[0][1] = -1 * matriks[0][1];
+            hasilMatriks[1][0] = -1 * matriks[1][0];
+            hasilMatriks[1][1] = matriks[0][0];
+
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    hasilMatriks[i][j] = hasilMatriks[i][j] * det;
+                }
             }
         }
     }
@@ -142,21 +196,27 @@ void buatMatriksIdentitas(int m, int n, int matriks[][100])
     }
 }
 
-bool perkalianMatriks(int kolomA, int barisA, int kolomB, int barisB, int matriksA[100][100], int matriksB[100][100], int matriksC[100][100]){
-    //perkalian matriks
-    if (kolomA != barisB){
-        cout << " !! Maaf, kolom A dan baris B jumlahnya harus sama !! " <<endl;
+bool perkalianMatriks(int kolomA, int barisA, int kolomB, int barisB, int matriksA[100][100], int matriksB[100][100], int matriksC[100][100])
+{
+    // perkalian matriks
+    if (kolomA != barisB)
+    {
+        cout << " !! Maaf, kolom A dan baris B jumlahnya harus sama !! " << endl;
         return 0;
     }
-    else{
+    else
+    {
         int temp;
 
-        for(int x=1; x<=kolomB; x++){
-            for(int i=1; i<=barisA; i++){  
-                int y=1;
-                int j=1;
+        for (int x = 1; x <= kolomB; x++)
+        {
+            for (int i = 1; i <= barisA; i++)
+            {
+                int y = 1;
+                int j = 1;
                 temp = 0;
-                for(int b=1; b<=kolomA; b++){
+                for (int b = 1; b <= kolomA; b++)
+                {
                     temp = temp + (matriksA[i][j] * matriksB[y][x]);
                     y++;
                     j++;
@@ -168,73 +228,82 @@ bool perkalianMatriks(int kolomA, int barisA, int kolomB, int barisB, int matrik
     }
 }
 
-int menampilkanMatriks(const char* nama_matriks, int kolom, int baris, int matriks[100][100]){
+int menampilkanMatriks(const char *nama_matriks, int kolom, int baris, int matriks[100][100])
+{
     cout << nama_matriks << endl;
-    cout << " "<< static_cast<char>(218) << static_cast<char>(196) ;
-    for(int i=0; i<=kolom; i++){
+    cout << " " << static_cast<char>(218) << static_cast<char>(196);
+    for (int i = 0; i <= kolom; i++)
+    {
         cout << "\t";
     }
-    cout << static_cast<char>(196) << static_cast<char>(191) <<endl;
+    cout << static_cast<char>(196) << static_cast<char>(191) << endl;
 
-    for(int i=1; i<=baris; i++){
-        cout << " "<< static_cast<char>(179);
-        for(int j=1; j<=kolom; j++){
+    for (int i = 1; i <= baris; i++)
+    {
+        cout << " " << static_cast<char>(179);
+        for (int j = 1; j <= kolom; j++)
+        {
             cout << "\t" << matriks[i][j];
         }
-        cout << "\t " << static_cast<char>(179) <<endl;
+        cout << "\t " << static_cast<char>(179) << endl;
     }
 
-    cout << " "<<static_cast<char>(192) << static_cast<char>(196) ;
-    for(int i=0; i<=kolom; i++){
+    cout << " " << static_cast<char>(192) << static_cast<char>(196);
+    for (int i = 0; i <= kolom; i++)
+    {
         cout << "\t";
     }
-    cout <<static_cast<char>(196) << static_cast<char>(217) <<endl ;
+    cout << static_cast<char>(196) << static_cast<char>(217) << endl;
     return 0;
 }
 
-int gatePerkalian(){
+int gatePerkalian()
+{
     int kolomA, barisA, kolomB, barisB;
 
     cout << static_cast<char>(201);
-    for(int i=1; i<= 40; i++){
+    for (int i = 1; i <= 40; i++)
+    {
         cout << static_cast<char>(205);
     }
-    cout << static_cast<char>(187) <<endl;
-    cout << static_cast<char>(186) << "           Perkalian 2 Matriks          " << static_cast<char>(186) <<endl;
+    cout << static_cast<char>(187) << endl;
+    cout << static_cast<char>(186) << "           Perkalian 2 Matriks          " << static_cast<char>(186) << endl;
     cout << static_cast<char>(200);
-    for(int i=1; i<= 40; i++)
+    for (int i = 1; i <= 40; i++)
         cout << static_cast<char>(205);
-    cout << static_cast<char>(188) <<endl;
-    
+    cout << static_cast<char>(188) << endl;
 
     // assign matriks A
     int matriksA[100][100];
-    cout << "\n Matriks A :" <<endl;
+    cout << "\n Matriks A :" << endl;
     cout << " Masukkan jumlah kolom = ";
     cin >> kolomA;
     cout << " Masukkan jumlah baris = ";
     cin >> barisA;
 
-    for(int i=1; i<=barisA; i++){
-        for(int j=1; j<=kolomA; j++){
-            cout << " Masukkan angka pada elemen (" << i << "," << j << ") = " ;
-            cin >> matriksA[i][j]; 
+    for (int i = 1; i <= barisA; i++)
+    {
+        for (int j = 1; j <= kolomA; j++)
+        {
+            cout << " Masukkan angka pada elemen (" << i << "," << j << ") = ";
+            cin >> matriksA[i][j];
         }
     }
 
-    
     // assign matriks B
     int matriksB[100][100];
     barisB = kolomA;
-    cout << "\n Matriks B :" <<endl;
-    cout << "          jumlah baris = " << barisB <<endl;
+    cout << "\n Matriks B :" << endl;
+    cout << "          jumlah baris = " << barisB << endl;
     cout << " Masukkan jumlah kolom = ";
     cin >> kolomB;
 
-    for(int i=1; i<=barisB; i++){
-        for(int j=1; j<=kolomB; j++){
-            cout << " Masukkan angka pada elemen (" << i << "," << j << ") = " ;
-            cin >> matriksB[i][j]; 
+    for (int i = 1; i <= barisB; i++)
+    {
+        for (int j = 1; j <= kolomB; j++)
+        {
+            cout << " Masukkan angka pada elemen (" << i << "," << j << ") = ";
+            cin >> matriksB[i][j];
         }
     }
     // end assign
@@ -248,7 +317,8 @@ int gatePerkalian(){
     int kolomC = kolomB;
     int matriksC[100][100];
 
-    if(perkalianMatriks(kolomA,barisA, kolomB, barisB, matriksA, matriksB, matriksC)){
+    if (perkalianMatriks(kolomA, barisA, kolomB, barisB, matriksA, matriksB, matriksC))
+    {
         menampilkanMatriks(" Hasil A x B : ", kolomC, barisC, matriksC);
     }
     cout << " Tekan Enter untuk Kembali ";
