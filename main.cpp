@@ -100,7 +100,7 @@ int main()
                     break;
                 case 3:
                     insertDuaMatriks(barisA, kolomA, barisB, kolomB, matriksA, matriksB);
-                    if (perkalianLinear(barisA, kolomA, barisB, kolomB, matriksA, matriksB, hasilMatriks))
+                    if (perkalianLinier(barisA, kolomA, barisB, kolomB, matriksA, matriksB, hasilMatriks))
                     {
                         menampilkanMatriks("Hasil Perkalian Kombinasi Linear", kolomA, barisA, hasilMatriks);   
                     }
