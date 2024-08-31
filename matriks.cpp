@@ -1,7 +1,7 @@
 
-void penjumlahanMatriks(int i, int j, int matriks1[][100], int matriks2[][100], int hasilMatriks[][100])
+void penjumlahanMatriks(int i1, int j1, int i2, int j2, int matriks1[][100], int matriks2[][100], int hasilMatriks[][100])
 {
-    if ((i != i) && (j != j))
+    if ((i1 != i2) && (j1 != j2))
     {
         cout << "Jumlah elemen pada matriks tidak sama. Matriks tidak dapat dijumlahkan!!" << endl;
     }
@@ -17,9 +17,9 @@ void penjumlahanMatriks(int i, int j, int matriks1[][100], int matriks2[][100], 
     }
 }
 
-void penguranganMatriks(int i, int j, int matriks1[][100], int matriks2[][100], int hasilMatriks[][100])
+void penguranganMatriks(int i1, int j1, int i2, int j2,int matriks1[][100], int matriks2[][100], int hasilMatriks[][100])
 {
-    if ((i != i) && (j != j))
+    if ((i1 != i2) && (j1 != j2))
     {
         cout << "Jumlah elemen pada matriks tidak sama. Matriks tidak dapat dijumlahkan!!" << endl;
     }
