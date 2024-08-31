@@ -20,7 +20,7 @@ void transposeMatriks(int i, int j, int matriks[][100]);
 void matriksNol(int i, int j);
 
 /* Wildan */
-void trace(int m, int n, int matriks[][100]);
+int trace(int m, int n, int matriks[][100]);
 void perkalianSkalar(int skalar, int matriks[][100]);
 void buatMatriksIdentitas(int m, int n, int matriks[][100]);
 

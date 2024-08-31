@@ -123,6 +123,20 @@ int main()
             cin.get();
             break;
         case 5:
+            int hasiltrace;
+            insertSatuMatriks(barisA,kolomA,matriksA);
+            hasiltrace = trace(barisA, kolomA, matriksA);
+            if (hasiltrace != 0) 
+            {
+                cout << "=== Trace dari matriks tersebut adalah ===" << endl;
+                cout << "                  " << hasiltrace << endl;
+            }
+            else 
+            {
+                cout << "Trace tidak dapat dihitung. Bukan matriks persegi!!\n";
+
+            }
+            system("pause");
             break;
         case 6:
             cout << "\n Matriks:" << endl;
@@ -135,6 +149,7 @@ int main()
             cin.ignore();
             cin.get();
             break;
+        case 7:
             break;
         case 8:
             inversMatriks();

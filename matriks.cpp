@@ -165,13 +165,12 @@ void inversMatriks()
     }
 }
 
-void trace(int m, int n, int matriks[][100])
+int trace(int m, int n, int matriks[][100])
 {
-
-    int trace;
+    int trace = 0;
     if (m != n)
     {
-        cout << "Trace pada matriks tidak dapat dihitung, bukan matriks persegi!!\n";
+        return 0;
     }
     else
     {
@@ -185,8 +184,9 @@ void trace(int m, int n, int matriks[][100])
                 }
             }
         }
+    return trace;
     }
-    cout << "Trace dari matriks tersebut adalah : " << trace;
+    
 }
 
 void perkalianSkalar(int skalar, int matriks[][100])
