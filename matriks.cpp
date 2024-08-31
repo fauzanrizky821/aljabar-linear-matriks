@@ -328,7 +328,6 @@ int gatePerkalian()
 
 int insertMatriks(int barisA, int kolomA, int barisB, int kolomB, int matriksA[100][100], int matriksB[100][100]){
     // assign matriks A
-    int matriksA[100][100];
     cout << "\n Matriks A :" <<endl;
     cout << " Masukkan jumlah kolom = ";
     cin >> kolomA;
@@ -343,7 +342,6 @@ int insertMatriks(int barisA, int kolomA, int barisB, int kolomB, int matriksA[1
     }
 
     // assign matriks B
-    int matriksB[100][100];
     cout << "\n Matriks B :" <<endl;
     cout << " Masukkan jumlah baris = ";
     cin >> barisB;
