@@ -1,2 +1,2 @@
-# aljabar-linear-matriks
+# Aljabar Linier [Matriks]
 Belajar matriks pada c++
