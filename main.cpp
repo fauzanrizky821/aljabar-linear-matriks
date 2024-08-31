@@ -55,7 +55,7 @@ int main()
             break;
         case 2:
             insertDuaMatriks(barisA, kolomA, barisB, kolomB, matriksA, matriksB);
-            if(penjumlahanMatriks(barisA, kolomA, barisB, kolomB, matriksA, matriksB, hasilMatriks))
+            if(penguranganMatriks(barisA, kolomA, barisB, kolomB, matriksA, matriksB, hasilMatriks))
             {
                 menampilkanMatriks("Hasil Pengurangan", kolomA, barisA, hasilMatriks);
             }

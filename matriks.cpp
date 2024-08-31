@@ -73,35 +73,35 @@ bool penguranganMatriks(int i1, int j1, int i2, int j2, int matriks1[][100], int
     }
 }
 
-bool perkalianLinier(int i1, int j1, int i2, int j2, int matriks1[][100], int matriks2[][100], int hasilMatriks[][100])
-{
-    if (j1 != i2)
+    bool perkalianLinier(int i1, int j1, int i2, int j2, int matriks1[][100], int matriks2[][100], int hasilMatriks[][100])
     {
-        cout << "Jumlah kolom matriks pertama harus sama dengan jumlah baris matriks kedua!" << endl;
-        return 0;
-    }
-    else
-    {
-        int hasil = 1;
-        int ih = i1;
-        int jh = j2;
-
-        int m = 0;
-        for (int n = 0; n < j2; n++)
+        if (j1 != i2)
         {
-            m = 0;
-            for (int j = 0; j < j1; j++)
-            {
-                for (int i = 0; i < i1; i++)
-                {
-                    hasilMatriks[i][n] = hasilMatriks[i][n] + matriks1[i][j] * matriks2[m][n];
-                }
-                m++;
-            }
+            cout << "Jumlah kolom matriks pertama harus sama dengan jumlah baris matriks kedua!" << endl;
+            return 0;
         }
-        return 1;
+        else
+        {
+            int hasil = 1;
+            int ih = i1;
+            int jh = j2;
+
+            int m = 0;
+            for (int n = 0; n < j2; n++)
+            {
+                m = 0;
+                for (int j = 0; j < j1; j++)
+                {
+                    for (int i = 0; i < i1; i++)
+                    {
+                        hasilMatriks[i][n] = hasilMatriks[i][n] + matriks1[i][j] * matriks2[m][n];
+                    }
+                    m++;
+                }
+            }
+            return 1;
+        }
     }
-}
 
 void inversMatriks()
 {
