@@ -26,11 +26,11 @@ int main()
         cout << static_cast<char>(186) << "   1. Operasi Penjumlahan               " << static_cast<char>(186) << endl;
         cout << static_cast<char>(186) << "   2. Operasi Pengurangan               " << static_cast<char>(186) << endl;
         cout << static_cast<char>(186) << "   3. Operasi Perkalian                 " << static_cast<char>(186) << endl;
-        cout << static_cast<char>(186) << "   3. Tranpose                          " << static_cast<char>(186) << endl;
-        cout << static_cast<char>(186) << "   4. Trace                             " << static_cast<char>(186) << endl;
-        cout << static_cast<char>(186) << "   5. Matriks Nol                       " << static_cast<char>(186) << endl;
-        cout << static_cast<char>(186) << "   6. Matriks Identitas                 " << static_cast<char>(186) << endl;
-        cout << static_cast<char>(186) << "   7. Invers                            " << static_cast<char>(186) << endl;
+        cout << static_cast<char>(186) << "   4. Tranpose                          " << static_cast<char>(186) << endl;
+        cout << static_cast<char>(186) << "   5. Trace                             " << static_cast<char>(186) << endl;
+        cout << static_cast<char>(186) << "   6. Matriks Nol                       " << static_cast<char>(186) << endl;
+        cout << static_cast<char>(186) << "   7. Matriks Identitas                 " << static_cast<char>(186) << endl;
+        cout << static_cast<char>(186) << "   8. Invers                            " << static_cast<char>(186) << endl;
         cout << static_cast<char>(186) << "   0. Keluar                            " << static_cast<char>(186) << endl;
         cout << static_cast<char>(200);
         for (int i = 1; i <= 40; i++)
@@ -116,12 +116,27 @@ int main()
             pilih_menu = 99;
             break;
         case 4:
+            insertSatuMatriks(barisA,kolomA,matriksA);
+            transposeMatriks(barisA,kolomA,matriksA);
+            cout << " Tekan Enter untuk Kembali ";
+            cin.ignore();
+            cin.get();
             break;
         case 5:
             break;
         case 6:
+            cout << "\n Matriks:" << endl;
+            cout << " Masukkan jumlah kolom = ";
+            cin >> kolomA;
+            cout << " Masukkan jumlah baris = ";
+            cin >> barisA;
+            matriksNol(barisA,kolomA);
+            cout << " Tekan Enter untuk Kembali ";
+            cin.ignore();
+            cin.get();
             break;
-        case 7:
+            break;
+        case 8:
             inversMatriks();
             cout << " Tekan Enter untuk Kembali ";
             cin.ignore();

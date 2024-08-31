@@ -16,7 +16,7 @@ bool perkalianLinear(int i1, int j1, int i2, int j2, int matriks1[][100], int ma
 void inversMatriks();
 
 /* Fachry */
-void transposeMatriks(int i, int j, int matriks[100][100]);
+void transposeMatriks(int i, int j, int matriks[][100]);
 void matriksNol(int i, int j);
 
 /* Wildan */

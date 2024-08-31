@@ -165,43 +165,6 @@ void inversMatriks()
     }
 }
 
-void transposeMatriks(int i, int j, int matriks[100][100])
-{
-    int transpose[100][100];
-    for (int p = 0; p < i; p++)
-    {
-        for (int q = 0; q < j; q++)
-        {
-            int temp;
-            temp = matriks[p][q];
-            matriks[p][q] = transpose[q][p];
-            transpose[q][p] = temp;
-        }
-    }
-    for (int p = 0; p < j; p++)
-    {
-        for (int q = 0; q < i; q++)
-        {
-            cout << transpose[p][q];
-        }
-        cout << endl;
-    }
-}
-
-void matriksNol(int i, int j)
-{
-    int matriks[100][100];
-    for (int p = 0; p < i; p++)
-    {
-        for (int q = 0; q < j; q++)
-        {
-            matriks[p][q] = 0;
-            cout << matriks[p][q];
-        }
-        cout << endl;
-    }
-}
-
 void trace(int m, int n, int matriks[][100])
 {
 
@@ -429,4 +392,33 @@ int insertSatuMatriks(int &barisA, int &kolomA, int matriksA[100][100])
         }
     }
     return 0;
+}
+
+void transposeMatriks(int i, int j, int matriks[][100])
+{
+    int transpose[100][100];
+    for (int p = 0; p < i; p++)
+    {
+        for (int q = 0; q < j; q++)
+        {
+            int temp;
+            temp = matriks[p][q];
+            matriks[p][q] = transpose[q][p];
+            transpose[q][p] = temp;
+        }
+    }
+    menampilkanMatriks("Matriks Transpose",i,j,transpose);
+}
+
+void matriksNol(int i, int j)
+{
+    int matriks[100][100];
+    for (int p = 0; p < i; p++)
+    {
+        for (int q = 0; q < j; q++)
+        {
+            matriks[p][q] = 0;
+        }
+    }
+    menampilkanMatriks("Matriks Nol",j,i,matriks);
 }
