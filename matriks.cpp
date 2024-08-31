@@ -256,3 +256,37 @@ int gatePerkalian(){
     cin.get();
 }
 
+int insertMatriks(int barisA, int kolomA, int barisB, int kolomB, int matriksA[100][100], int matriksB[100][100]){
+    // assign matriks A
+    int matriksA[100][100];
+    cout << "\n Matriks A :" <<endl;
+    cout << " Masukkan jumlah kolom = ";
+    cin >> kolomA;
+    cout << " Masukkan jumlah baris = ";
+    cin >> barisA;
+
+    for(int i=1; i<=barisA; i++){
+        for(int j=1; j<=kolomA; j++){
+            cout << " Masukkan angka pada elemen (" << i << "," << j << ") = " ;
+            cin >> matriksA[i][j]; 
+        }
+    }
+
+    // assign matriks B
+    int matriksB[100][100];
+    cout << "\n Matriks B :" <<endl;
+    cout << " Masukkan jumlah baris = ";
+    cin >> barisB;
+    cout << " Masukkan jumlah kolom = ";
+    cin >> kolomB;
+
+    for(int i=1; i<=barisB; i++){
+        for(int j=1; j<=kolomB; j++){
+            cout << " Masukkan angka pada elemen (" << i << "," << j << ") = " ;
+            cin >> matriksB[i][j]; 
+        }
+    }
+    // end assign
+
+    return 0;
+}
