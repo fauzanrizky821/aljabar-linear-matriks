@@ -73,7 +73,7 @@ bool penguranganMatriks(int i1, int j1, int i2, int j2, int matriks1[][100], int
     }
 }
 
-bool perkalianLinear(int i1, int j1, int i2, int j2, int matriks1[][100], int matriks2[][100], int hasilMatriks[][100])
+bool perkalianLinier(int i1, int j1, int i2, int j2, int matriks1[][100], int matriks2[][100], int hasilMatriks[][100])
 {
     if (j1 != i2)
     {
@@ -87,7 +87,7 @@ bool perkalianLinear(int i1, int j1, int i2, int j2, int matriks1[][100], int ma
         int jh = j2;
 
         int m = 0;
-        for (int n; n < j2; n++)
+        for (int n = 0; n < j2; n++)
         {
             m = 0;
             for (int j = 0; j < j1; j++)

@@ -65,7 +65,7 @@ int main()
             break;
         case 3:
             do {
-                system("clas");
+                system("cls");
                 // Tampilan
                 cout << static_cast<char>(201);
                 for (int i = 1; i <= 40; i++)
