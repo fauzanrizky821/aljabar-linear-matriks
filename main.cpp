@@ -6,8 +6,9 @@ using namespace std;
 int main()
 {
     int barisA, kolomA, barisB, kolomB;
-    int matriksA[100][100], matriksB[100][100];
+    int matriksA[100][100], matriksB[100][100], hasilMatriks[100][100];
     int pilih_menu;
+    system("cls");
     do
     {
         // TAMPILAN
@@ -39,7 +40,13 @@ int main()
         {
         case 1:
             insertDuaMatriks(barisA, kolomA, barisB, kolomB, matriksA, matriksB);
-            
+            menampilkanMatriks("MatriksA", kolomA, barisA, matriksA);
+            menampilkanMatriks("MatriksB", kolomB, barisB, matriksB);
+            penjumlahanMatriks(barisA, kolomA, barisB, kolomB, matriksA, matriksB, hasilMatriks);
+            menampilkanMatriks("Hasil Penjumlahan", kolomA, barisA, hasilMatriks);
+            cout << " Tekan Enter untuk Kembali ";
+            cin.ignore();
+            cin.get();
             break;
         case 2:
             break;

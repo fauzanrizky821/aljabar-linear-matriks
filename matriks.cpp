@@ -1,5 +1,37 @@
 #include "matriks.h"
 
+using namespace std;
+
+int menampilkanMatriks(const char *nama_matriks, int kolom, int baris, int matriks[100][100])
+{
+    cout << nama_matriks << endl;
+    cout << " " << static_cast<char>(218) << static_cast<char>(196);
+    for (int i = 0; i <= kolom; i++)
+    {
+        cout << "\t";
+    }
+    cout << static_cast<char>(196) << static_cast<char>(191) << endl;
+
+    for (int i = 1; i <= baris; i++)
+    {
+        cout << " " << static_cast<char>(179);
+        for (int j = 1; j <= kolom; j++)
+        {
+            cout << "\t" << matriks[i][j];
+        }
+        cout << "\t " << static_cast<char>(179) << endl;
+    }
+
+    cout << " " << static_cast<char>(192) << static_cast<char>(196);
+    for (int i = 0; i <= kolom; i++)
+    {
+        cout << "\t";
+    }
+    cout << static_cast<char>(196) << static_cast<char>(217) << endl;
+
+    return 0;
+}
+
 void penjumlahanMatriks(int i1, int j1, int i2, int j2, int matriks1[][100], int matriks2[][100], int hasilMatriks[][100])
 {
     if ((i1 != i2) && (j1 != j2))
@@ -8,9 +40,9 @@ void penjumlahanMatriks(int i1, int j1, int i2, int j2, int matriks1[][100], int
     }
     else
     {
-        for (int a = 0; a < 2; a++)
+        for (int a = 0; a < i1; a++)
         {
-            for (int b = 0; b < 2; b++)
+            for (int b = 0; b < i2; b++)
             {
                 hasilMatriks[a][b] = matriks1[a][b] + matriks2[a][b];
             }
@@ -26,9 +58,9 @@ void penguranganMatriks(int i1, int j1, int i2, int j2, int matriks1[][100], int
     }
     else
     {
-        for (int a = 0; a < 2; a++)
+        for (int a = 0; a < i1; a++)
         {
-            for (int b = 0; b < 2; b++)
+            for (int b = 0; b < i2; b++)
             {
                 hasilMatriks[a][b] = matriks1[a][b] - matriks2[a][b];
             }
@@ -226,35 +258,6 @@ bool perkalianMatriks(int kolomA, int barisA, int kolomB, int barisB, int matrik
         }
         return 1;
     }
-}
-
-int menampilkanMatriks(const char *nama_matriks, int kolom, int baris, int matriks[100][100])
-{
-    cout << nama_matriks << endl;
-    cout << " " << static_cast<char>(218) << static_cast<char>(196);
-    for (int i = 0; i <= kolom; i++)
-    {
-        cout << "\t";
-    }
-    cout << static_cast<char>(196) << static_cast<char>(191) << endl;
-
-    for (int i = 1; i <= baris; i++)
-    {
-        cout << " " << static_cast<char>(179);
-        for (int j = 1; j <= kolom; j++)
-        {
-            cout << "\t" << matriks[i][j];
-        }
-        cout << "\t " << static_cast<char>(179) << endl;
-    }
-
-    cout << " " << static_cast<char>(192) << static_cast<char>(196);
-    for (int i = 0; i <= kolom; i++)
-    {
-        cout << "\t";
-    }
-    cout << static_cast<char>(196) << static_cast<char>(217) << endl;
-    return 0;
 }
 
 int gatePerkalian()
