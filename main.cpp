@@ -96,7 +96,14 @@ int main()
                     gatePerkalian();
                     break;
                 case 2:
-                    /* code */
+                    int skalar;
+                    cout << "Masukkan nilai skalar : ";
+                    cin >> skalar;
+                    insertSatuMatriks(barisA, kolomA, matriksA);
+                    menampilkanMatriks("Matriks yang dibuat :", kolomA, barisA, matriksA);
+                    perkalianSkalar(skalar, barisA, kolomA, matriksA);
+                    menampilkanMatriks("Hasil perkalian matriks dengan skalar :", kolomA, barisA, matriksA);
+                    system("pause");
                     break;
                 case 3:
                     insertDuaMatriks(barisA, kolomA, barisB, kolomB, matriksA, matriksB);
@@ -123,6 +130,20 @@ int main()
             cin.get();
             break;
         case 5:
+            int hasiltrace;
+            insertSatuMatriks(barisA,kolomA,matriksA);
+            hasiltrace = trace(barisA, kolomA, matriksA);
+            if (hasiltrace != 0) 
+            {
+                cout << "=== Trace dari matriks tersebut adalah ===" << endl;
+                cout << "                  " << hasiltrace << endl;
+            }
+            else 
+            {
+                cout << "Trace tidak dapat dihitung. Bukan matriks persegi!!\n";
+
+            }
+            system("pause");
             break;
         case 6:
             cout << "\n Matriks:" << endl;
@@ -135,6 +156,17 @@ int main()
             cin.ignore();
             cin.get();
             break;
+        case 7:
+            insertSatuMatriks(barisA,kolomA,matriksA);
+            if (buatMatriksIdentitas(barisA, kolomA, matriksA))
+            {
+                menampilkanMatriks("Matriks Identitas :", kolomA, barisA, matriksA);
+            } 
+            else 
+            {
+                cout << "Matriks identitas tidak dapat dibuat. Bukan matriks persegi!!\n";
+            }
+            system("pause");
             break;
         case 8:
             inversMatriks();

@@ -165,13 +165,12 @@ void inversMatriks()
     }
 }
 
-void trace(int m, int n, int matriks[][100])
+int trace(int m, int n, int matriks[][100])
 {
-
-    int trace;
+    int trace = 0;
     if (m != n)
     {
-        cout << "Trace pada matriks tidak dapat dihitung, bukan matriks persegi!!\n";
+        return 0;
     }
     else
     {
@@ -185,36 +184,30 @@ void trace(int m, int n, int matriks[][100])
                 }
             }
         }
+    return trace;
     }
-    cout << "Trace dari matriks tersebut adalah : " << trace;
+    
 }
 
-void perkalianSkalar(int skalar, int matriks[][100])
+void perkalianSkalar(int skalar, int baris, int kolom, int matriks[][100])
 {
-    // perkalian matriks dengan skalar
-    for (int i = 0; i < 2; i++)
+
+    cout << " ======== Perkalian Matriks dengan Skalar ========" << endl;
+
+    for (int i = 0; i < baris; i++)
     {
-        for (int j = 0; j < 2; j++)
+        for (int j = 0; j < kolom; j++)
         {
             matriks[i][j] = matriks[i][j] * skalar;
         }
     }
-
-    cout << "\nhasil perkalian matriks dengan skalar : " << endl;
-    for (int i = 0; i < 2; i++)
-    {
-        for (int j = 0; j < 2; j++)
-        {
-            cout << matriks[i][j];
-        }
-    }
 }
 
-void buatMatriksIdentitas(int m, int n, int matriks[][100])
+bool buatMatriksIdentitas(int m, int n, int matriks[][100])
 {
     if (m != n)
     {
-        cout << "Matriks identitas tidak bisa dibuat. Bukan matriks persegi!!\n";
+        return false;
     }
     else
     {
@@ -232,6 +225,7 @@ void buatMatriksIdentitas(int m, int n, int matriks[][100])
                 }
             }
         }
+        return true;
     }
 }
 
