@@ -96,7 +96,14 @@ int main()
                     gatePerkalian();
                     break;
                 case 2:
-                    /* code */
+                    int skalar;
+                    cout << "Masukkan nilai skalar : ";
+                    cin >> skalar;
+                    insertSatuMatriks(barisA, kolomA, matriksA);
+                    menampilkanMatriks("Matriks yang dibuat :", kolomA, barisA, matriksA);
+                    perkalianSkalar(skalar, barisA, kolomA, matriksA);
+                    menampilkanMatriks("Hasil perkalian matriks dengan skalar :", kolomA, barisA, matriksA);
+                    system("pause");
                     break;
                 case 3:
                     insertDuaMatriks(barisA, kolomA, barisB, kolomB, matriksA, matriksB);
