@@ -210,11 +210,11 @@ void perkalianSkalar(int skalar, int matriks[][100])
     }
 }
 
-void buatMatriksIdentitas(int m, int n, int matriks[][100])
+bool buatMatriksIdentitas(int m, int n, int matriks[][100])
 {
     if (m != n)
     {
-        cout << "Matriks identitas tidak bisa dibuat. Bukan matriks persegi!!\n";
+        return false;
     }
     else
     {
@@ -232,6 +232,7 @@ void buatMatriksIdentitas(int m, int n, int matriks[][100])
                 }
             }
         }
+        return true;
     }
 }
 

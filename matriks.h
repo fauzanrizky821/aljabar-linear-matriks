@@ -22,7 +22,7 @@ void matriksNol(int i, int j);
 /* Wildan */
 int trace(int m, int n, int matriks[][100]);
 void perkalianSkalar(int skalar, int matriks[][100]);
-void buatMatriksIdentitas(int m, int n, int matriks[][100]);
+bool buatMatriksIdentitas(int m, int n, int matriks[][100]);
 
 /* Rifqi */
 bool perkalianMatriks(int kolomA, int barisA, int kolomB, int barisB, int matriksA[100][100], int matriksB[100][100], int matriksC[100][100]);
