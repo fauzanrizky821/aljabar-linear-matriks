@@ -1,3 +1,4 @@
+#include "matriks.h"
 
 void penjumlahanMatriks(int i1, int j1, int i2, int j2, int matriks1[][100], int matriks2[][100], int hasilMatriks[][100])
 {
@@ -34,6 +35,29 @@ void penguranganMatriks(int i1, int j1, int i2, int j2,int matriks1[][100], int 
         }
     }
 }
+
+void perkalianLinear(int i1, int j1, int i2, int j2, int matriks1[][100], int matriks2[][100], int hasilMatriks[][100])
+{
+    int hasil = 1;
+    int ih = i1;
+    int jh = j2;
+
+    int m = 0;
+    for (int n; n < j2; n++)
+    {
+        m = 0;
+        for (int j = 0; j < j1; j++)
+        {
+            for (int i = 0; i < i1; i++)
+            {
+                hasilMatriks[i][n] = hasilMatriks[i][n] + matriks1[i][j] * matriks2[m][n];
+            }
+            m++;
+        }
+    }
+}
+
+
 
 void transposeMatriks(int i, int j, int matriks[100][100])
 {
