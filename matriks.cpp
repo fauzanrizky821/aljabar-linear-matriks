@@ -82,9 +82,11 @@ bool penguranganMatriks(int i1, int j1, int i2, int j2, int matriks1[][100], int
         }
         else
         {
-            int hasil = 1;
-            int ih = i1;
-            int jh = j2;
+            for(int i = 0; i < i1; i++){
+                for(int j = 0; j < j2; j++){
+                    hasilMatriks[i][j] = 0;
+                }
+            }
 
             int m = 0;
             for (int n = 0; n < j2; n++)
