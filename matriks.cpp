@@ -17,7 +17,7 @@ int menampilkanMatriks(const char *nama_matriks, int kolom, int baris, int matri
         cout << " " << static_cast<char>(179);
         for (int j = 1; j <= kolom; j++)
         {
-            cout << "\t" << matriks[i][j];
+            cout << "\t" << matriks[i-1][j-1];
         }
         cout << "\t " << static_cast<char>(179) << endl;
     }
@@ -249,11 +249,11 @@ bool perkalianMatriks(int kolomA, int barisA, int kolomB, int barisB, int matrik
                 temp = 0;
                 for (int b = 1; b <= kolomA; b++)
                 {
-                    temp = temp + (matriksA[i][j] * matriksB[y][x]);
+                    temp = temp + (matriksA[i-1][j-1] * matriksB[y-1][x-1]);
                     y++;
                     j++;
                 }
-                matriksC[i][x] = temp;
+                matriksC[i-1][x-1] = temp;
             }
         }
         return 1;
@@ -289,7 +289,7 @@ int gatePerkalian()
         for (int j = 1; j <= kolomA; j++)
         {
             cout << " Masukkan angka pada elemen (" << i << "," << j << ") = ";
-            cin >> matriksA[i][j];
+            cin >> matriksA[i-1][j-1];
         }
     }
 
@@ -306,7 +306,7 @@ int gatePerkalian()
         for (int j = 1; j <= kolomB; j++)
         {
             cout << " Masukkan angka pada elemen (" << i << "," << j << ") = ";
-            cin >> matriksB[i][j];
+            cin >> matriksB[i-1][j-1];
         }
     }
     // end assign
@@ -340,21 +340,21 @@ int insertDuaMatriks(int &barisA, int &kolomA, int &barisB, int &kolomB, int mat
     for(int i=1; i<=barisA; i++){
         for(int j=1; j<=kolomA; j++){
             cout << " Masukkan angka pada elemen (" << i << "," << j << ") = " ;
-            cin >> matriksA[i][j]; 
+            cin >> matriksA[i-1][j-1]; 
         }
     }
 
     // assign matriks B
     cout << "\n Matriks B :" <<endl;
-    cout << " Masukkan jumlah baris = ";
-    cin >> barisB;
     cout << " Masukkan jumlah kolom = ";
     cin >> kolomB;
+    cout << " Masukkan jumlah baris = ";
+    cin >> barisB;
 
     for(int i=1; i<=barisB; i++){
         for(int j=1; j<=kolomB; j++){
             cout << " Masukkan angka pada elemen (" << i << "," << j << ") = " ;
-            cin >> matriksB[i][j]; 
+            cin >> matriksB[i-1][j-1]; 
         }
     }
     // end assign
@@ -373,7 +373,7 @@ int insertSatuMatriks(int &barisA, int &kolomA, int matriksA[100][100]){
     for(int i=1; i<=barisA; i++){
         for(int j=1; j<=kolomA; j++){
             cout << " Masukkan angka pada elemen (" << i << "," << j << ") = " ;
-            cin >> matriksA[i][j]; 
+            cin >> matriksA[i-1][j-1]; 
         }
     }
     return 0;
