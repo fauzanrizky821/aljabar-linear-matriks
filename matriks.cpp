@@ -12,10 +12,10 @@ int menampilkanMatriks(const char *nama_matriks, int kolom, int baris, int matri
     }
     cout << static_cast<char>(196) << static_cast<char>(191) << endl;
 
-    for (int i = 1; i <= baris; i++)
+    for (int i = 0; i < baris; i++)
     {
         cout << " " << static_cast<char>(179);
-        for (int j = 1; j <= kolom; j++)
+        for (int j = 0; j < kolom; j++)
         {
             cout << "\t" << matriks[i-1][j-1];
         }
@@ -337,8 +337,8 @@ int insertDuaMatriks(int &barisA, int &kolomA, int &barisB, int &kolomB, int mat
     cout << " Masukkan jumlah baris = ";
     cin >> barisA;
 
-    for(int i=1; i<=barisA; i++){
-        for(int j=1; j<=kolomA; j++){
+    for(int i=0; i<barisA; i++){
+        for(int j=0; j<kolomA; j++){
             cout << " Masukkan angka pada elemen (" << i << "," << j << ") = " ;
             cin >> matriksA[i-1][j-1]; 
         }
@@ -351,8 +351,8 @@ int insertDuaMatriks(int &barisA, int &kolomA, int &barisB, int &kolomB, int mat
     cout << " Masukkan jumlah baris = ";
     cin >> barisB;
 
-    for(int i=1; i<=barisB; i++){
-        for(int j=1; j<=kolomB; j++){
+    for(int i=0; i<barisB; i++){
+        for(int j=0; j<kolomB; j++){
             cout << " Masukkan angka pada elemen (" << i << "," << j << ") = " ;
             cin >> matriksB[i-1][j-1]; 
         }
@@ -370,8 +370,8 @@ int insertSatuMatriks(int &barisA, int &kolomA, int matriksA[100][100]){
     cout << " Masukkan jumlah baris = ";
     cin >> barisA;
 
-    for(int i=1; i<=barisA; i++){
-        for(int j=1; j<=kolomA; j++){
+    for(int i=0; i<barisA; i++){
+        for(int j=0; j<kolomA; j++){
             cout << " Masukkan angka pada elemen (" << i << "," << j << ") = " ;
             cin >> matriksA[i-1][j-1]; 
         }
